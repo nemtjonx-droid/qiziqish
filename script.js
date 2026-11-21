@@ -1,61 +1,3 @@
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>IQ Test — 10 ta test, 300 savol</title>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&display=swap" rel="stylesheet">
-<style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
---bg:#e9ecf5;--ink:#1b1f33;--card:#ffffff;--opt:#f3f5fb;--optedge:#b9c0d8}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14172a;--ink:#eef0fa;--card:#1f2340;--opt:#2a2f52;--optedge:#0b0d1a}}
-*,*:before,*:after{box-sizing:inherit}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;display:flex;justify-content:center;padding:24px 14px}
-main{width:100%;max-width:640px;perspective:1200px}
-h1{font-size:2rem;margin:0 0 4px;font-weight:800}
-.sub{margin:0 0 14px;opacity:.75}
-.top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:16px;font-weight:700;flex-wrap:wrap}
-.clock{background:var(--card);border-radius:10px;padding:6px 12px;box-shadow:0 4px 0 var(--optedge);font-variant-numeric:tabular-nums}
-.card{background:var(--card);border-radius:18px;padding:22px;transform:rotateX(6deg);transform-origin:50% 100%;
-box-shadow:0 1px 0 var(--c),0 2px 0 var(--c),0 3px 0 var(--c),0 4px 0 var(--c),0 5px 0 var(--c),0 6px 0 var(--c),0 7px 0 var(--c),0 8px 0 var(--c),0 18px 28px rgba(0,0,0,.28);
-border-top:8px solid var(--c);transition:border-color .4s,box-shadow .4s}
-.tag{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--c);color:#fff;font-size:.85rem;font-weight:700;transition:background-color .4s}
-.q{font-size:1.3rem;font-weight:700;line-height:1.4;margin:14px 0 18px}
-.opts{display:grid;gap:12px}
-.opt{font:inherit;font-weight:600;text-align:left;color:var(--ink);background:var(--opt);border:0;border-radius:12px;padding:14px 16px;cursor:pointer;box-shadow:0 5px 0 var(--optedge);transition:background-color .25s,color .25s,box-shadow .25s}
-.opt:hover{background:var(--c);color:#fff;box-shadow:0 5px 0 rgba(0,0,0,.35)}
-.opt.sel{background:var(--c);color:#fff;box-shadow:0 5px 0 rgba(0,0,0,.45)}
-button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
-.nav{display:flex;justify-content:space-between;gap:12px;margin-top:22px;flex-wrap:wrap}
-.btn{font:inherit;font-weight:800;color:#fff;background:var(--c);border:0;border-radius:12px;padding:12px 20px;cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.35);transition:background-color .4s}
-.btn.grey{background:#7b84a8}
-.btn:disabled{opacity:.4;cursor:default}
-.save{width:100%;margin-top:18px;background:#1f9d63}
-.dots{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
-.dot{font:inherit;font-weight:700;font-size:.8rem;width:32px;height:32px;border:0;border-radius:8px;cursor:pointer;color:var(--ink);background:var(--opt);box-shadow:0 3px 0 var(--optedge);transition:background-color .3s,color .3s}
-.dot.ans{background:#8f9bd6;color:#fff}
-.dot.cur{background:var(--c);color:#fff}
-.row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--opt);border-radius:12px;padding:10px 12px 10px 16px;margin-bottom:12px;box-shadow:0 5px 0 var(--optedge)}
-.row b{font-size:1.05rem}
-.row .st{font-size:.85rem;opacity:.75;display:block}
-.row .btn{background:var(--rc);padding:9px 16px;box-shadow:0 5px 0 rgba(0,0,0,.35)}
-.big{font-size:4.5rem;font-weight:800;margin:6px 0;color:var(--c)}
-.res p{margin:6px 0}
-.small{font-size:.85rem;opacity:.7}
-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
-td,th{padding:7px 6px;text-align:left;border-bottom:1px solid var(--optedge)}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
-</style>
-</head>
-<body>
-<main>
-<h1>IQ Test</h1>
-<p class="sub">10 ta test, har birida 30 savol. Har bir testni “Boshlash” bilan oching.</p>
-<div class="top"><span id="prog"></span><span class="clock" id="clk">Umumiy: 0:00</span></div>
-<section class="card" id="card"></section>
-</main>
-<script>
 var CAT={L:["Mantiqiy savol","#4f6bff"],N:["Sonlar","#1f9d63"],V:["So‘z va analogiya","#d9822b"],S:["Fazoviy fikrlash","#a24cd6"]};
 var P=["#4f6bff","#1f9d63","#d9822b","#a24cd6","#d6457a","#1590b8","#7a8f1f","#c4552d","#5a54d6","#2a8f8f"];
 var NM=["Ali","Vali","Sardor","Bobur","Aziz","Jasur","Dilshod","Anvar","Nodir","Sherzod","Otabek","Timur"];
@@ -165,6 +107,3 @@ function finish(){
   document.getElementById("re").onclick=function(){location.reload()};
 }
 menu();
-</script>
-</body>
-</html>
