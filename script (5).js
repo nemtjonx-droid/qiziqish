@@ -128,12 +128,12 @@ function question(){
   prog.textContent=(cur+1)+"-test, "+(qi+1)+" / "+K+"-savol";
   var h='<span class="tag">'+cat[0]+' · '+(qi+1)+' / '+K+'</span><div class="q">'+esc(q[1])+'</div><div class="opts">';
   q[2].forEach(function(o,k){h+='<button class="opt'+(a===k?' sel':'')+'" data-k="'+k+'">'+String.fromCharCode(65+k)+') '+esc(o)+'</button>'});
-  h+='</div><div class="nav"><button class="btn grey" id="bk"'+(qi===0?' disabled':'')+'>Oldingisi</button>'+(qi===K-1?'<button class="btn" id="nx">Darajangizni ko‘rish</button>':'<button class="btn" id="nx">Keyingisi</button>')+'</div>';
+  h+='</div><div class="nav"><button class="btn grey" id="bk"'+(qi===0?' disabled':'')+'>Oldingisi</button>'+(qi===K-1&&a>=0?'<button class="btn" id="nx">Darajangizni ko‘rish</button>':'')+'</div>';
   h+='<button class="btn save" id="sv">Saqlash va ro‘yxatga qaytish</button>';
   card.innerHTML=h;
-  card.querySelectorAll(".opt").forEach(function(b){b.onclick=function(){ans[ix()]=+b.dataset.k;question()}});
+  card.querySelectorAll(".opt").forEach(function(b){b.onclick=function(){ans[ix()]=+b.dataset.k;question();if(qi<K-1){var at=cur,aq=qi;setTimeout(function(){if(cur===at&&qi===aq)go(qi+1)},350)}}});
   document.getElementById("bk").onclick=function(){go(qi-1)};
-  document.getElementById("nx").onclick=function(){if(qi===K-1){flush();var t=cur;cur=-1;testRes(t)}else go(qi+1)};
+  var nx=document.getElementById("nx");if(nx)nx.onclick=function(){flush();var t=cur;cur=-1;testRes(t)};
   document.getElementById("sv").onclick=menu;
   tick();
 }
